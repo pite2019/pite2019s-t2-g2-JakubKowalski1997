@@ -1,3 +1,5 @@
+import json
+
 class Bank:
     def __init__(self, name):
         self.name = name
@@ -25,9 +27,18 @@ class Bank:
                 return True
             else:
                 raise Exception("This client dont exists in bank")
-    
+    def print_report_to_json(self):
+        self.data = ""
+        self.data += "["
+        for client in self.list_of_clients:
+            self.data += "{Name: " + client.name + " "
+            self.data += ",Money: " + str(client.money) + "}," 
+        self.data +="]"
+        with open('data.txt', 'w') as outfile:  
+            json.dump(self.data, outfile)
     
 
 class Client:
-    def __init__(self, money):
+    def __init__(self, money, name):
         self.money = money
+        self.name = name

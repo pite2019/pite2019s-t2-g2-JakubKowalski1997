@@ -2,8 +2,8 @@ from Bank import Bank, Client
 
 def main():
     print("Welcome to banking world")
-    client1 = Client(100)
-    client2 = Client(200)
+    client1 = Client(100, "Jakub Kowalski")
+    client2 = Client(200, "Jan Nowak")
     bank = Bank("Alior")
     bank.add_client(client1)
     bank.add_client(client2)

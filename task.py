@@ -24,3 +24,17 @@
 #
 #Delete these comments before commit!
 #Good luck.
+
+from Bank import Bank, Client
+
+def main():
+    print("Welcome to banking world")
+    client1 = Client(100)
+    client2 = Client(200)
+    bank = Bank("Alior")
+
+    bank.transfer_money(client1, client2, 100)
+
+
+if __name__ == "__main__":
+    main()
